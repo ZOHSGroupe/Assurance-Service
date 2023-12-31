@@ -21,10 +21,12 @@ public class Vihecule{
     String id;
     String marque;
     String genre;
-    @Enumerated(value = EnumType.STRING)
-    TypeVihecule typeVihecule;
-    @Enumerated(value = EnumType.STRING)
-    FuelType fuelType;
+    //@Enumerated(value = EnumType.STRING)
+    //TypeVihecule typeVihecule;
+    String typeVihecule;
+    //@Enumerated(value = EnumType.STRING)
+    //FuelType fuelType;
+    String fuelType;
     String vehicleIdentificationNumber;//numero_chassis
     Long cylinderCount;
     String taxIdentificationNumber;//fiscalNumber
@@ -35,8 +37,10 @@ public class Vihecule{
     Double currentCarValue;
     @Temporal(TemporalType.DATE)
     Date manufacturingDate;
-    @Enumerated(value = EnumType.STRING)
-    Status status;
+
+    //@Enumerated(value = EnumType.STRING)
+    //Status status;
+    String status;
     @Temporal(TemporalType.DATE)
     Date dateCreation;
 

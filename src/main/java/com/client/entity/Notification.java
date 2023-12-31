@@ -17,8 +17,9 @@ public class Notification {
     String message;
     @Temporal(TemporalType.DATE)
     private Date dateNotification;
-    @Enumerated(value = EnumType.STRING)
-    NotificationStatus status;
+    //@Enumerated(value = EnumType.STRING)
+    //NotificationStatus status;
+    String status;
     @ManyToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     Client client;

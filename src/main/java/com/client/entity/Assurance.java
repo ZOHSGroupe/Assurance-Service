@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.Date;
 import java.util.List;
 
@@ -16,12 +15,14 @@ import java.util.List;
 public class Assurance {
     @Id
     String id;
-    @Enumerated(value = EnumType.STRING)
-    TypeAssurance type;
+    //@Enumerated(value = EnumType.STRING)
+    //TypeAssurance type;
+    String type;
     @Temporal(TemporalType.DATE)
     Date dateCraete;
-    @Enumerated(value = EnumType.STRING)
-    Status status;
+    //@Enumerated(value = EnumType.STRING)
+    //Status status;
+    String status;
     @OneToOne
     Vihecule vihecule;
     String price;

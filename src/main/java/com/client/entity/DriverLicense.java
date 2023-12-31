@@ -21,10 +21,12 @@ public class DriverLicense {
     Date issueDate;
     @Temporal(TemporalType.DATE)
     Date expirationDate;
-    @Enumerated(value = EnumType.STRING)
-    TypeDriverLicense type;
-    @Enumerated(value = EnumType.STRING)
-    Status status;
+    //@Enumerated(value = EnumType.STRING)
+    //TypeDriverLicense type;
+    String type;
+    //@Enumerated(value = EnumType.STRING)
+    //Status status;
+    String status;
     @Temporal(TemporalType.DATE)
     Date dateCreation;
     @ManyToOne

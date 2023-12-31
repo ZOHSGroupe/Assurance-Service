@@ -23,12 +23,14 @@ public class Client{
     @Temporal(TemporalType.DATE)
     Date birthDate;
     String nationality;
-    @Enumerated(value = EnumType.STRING)
-    Gender gender;
+    //@Enumerated(value = EnumType.STRING)
+    //Gender gender;
+    String gender;
     private Date createDate;
     String address;
-    @Enumerated(value = EnumType.STRING)
-    Status status;
+    //@Enumerated(value = EnumType.STRING)
+    //Status status;
+    String status;
 
     @OneToMany(mappedBy = "client",fetch = FetchType.LAZY)
     List<Vihecule> viheculeList;
