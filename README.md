@@ -9,7 +9,7 @@ Assurance-Service is an Application Programming interface for add,update,delete 
 
 
 
-## Dockerize the app :
+## Dockerize the app 
 
 
 
@@ -28,7 +28,7 @@ Assurance-Service is an Application Programming interface for add,update,delete 
 
 
 
-## Stay in touch :
+## Stay in touch 
 - Author - [Ouail Laamiri](https://www.linkedin.com/in/ouaillaamiri/) 
 - Test - [Postman]()
 - Documentation - [Postman]()
