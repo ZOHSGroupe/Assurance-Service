@@ -10,10 +10,12 @@ services:
       MYSQL_PASSWORD: admin
 
   # Eureka server
-  eureka-server:
-    image: netflixoss/eureka
-    ports:
-      - "8761:8761"
+    # Eureka server
+  discovery-service:
+      image: eureka:latest
+      container_name: eureka
+      ports:
+        - "8761:8761"
 
   # Spring Boot application service
   spring-app:
@@ -31,3 +33,12 @@ services:
       SPRING_DATASOURCE_PASSWORD: root
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
 
+
+  API-GATEWAY-SERVICE:
+    image: api-gateway:latest
+    container_name: api-gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery-service
+      - spring-app
