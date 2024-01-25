@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   # MySQL service
   mysql:
@@ -8,6 +9,11 @@ services:
       MYSQL_DATABASE: assurance
       MYSQL_PASSWORD: admin
 
+  # Eureka server
+  eureka-server:
+    image: netflixoss/eureka
+    ports:
+      - "8761:8761"
 
   # Spring Boot application service
   spring-app:
@@ -16,9 +22,12 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - mysql
+      - eureka-server
     ports:
       - "8082:8082"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/assurance
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+
