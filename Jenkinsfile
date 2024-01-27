@@ -7,6 +7,8 @@ pipeline {
         // Customize these variables based on your project
         DOCKER_HUB_REPO = 'ouail02/assurance-service'
         SPRING_PROFILES_ACTIVE = 'production'
+        BRANCH = 'Main1.0'
+        Git_REPO = 'https://github.com/ZOHSGroupe/Assurance-Service'
     }
 
     stages {
@@ -14,7 +16,7 @@ pipeline {
             steps {
                 // Manually specify the Git repository URL and branch
                 script {
-                    checkout([$class: 'GitSCM', branches: [[name: 'Main1.0']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ZOHSGroupe/Assurance-Service']]])
+                    checkout([$class: 'GitSCM', branches: [[name: "${BRANCH}"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: "${Git_REPO}"]]])
                 }
             }
         }
