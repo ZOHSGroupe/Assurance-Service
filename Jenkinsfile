@@ -39,10 +39,9 @@ pipeline {
             steps {
                 script {
                     // Log in to Docker Hub
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'DOCKER_HUB_PASSWORD', usernameVariable: 'DOCKER_HUB_USERNAME')]) {
+                    withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'DOCKER_HUB_PASSWORD'), string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'DOCKER_HUB_USERNAME')]) {
                         sh "docker login -u ${DOCKER_HUB_USERNAME} -p ${DOCKER_HUB_PASSWORD}"
                     }
-
                     // Push the Docker image to Docker Hub
                     sh "docker push ${DOCKER_HUB_REPO}:${env.BUILD_NUMBER}"
                 }
